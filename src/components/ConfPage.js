@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import MapContainer from './MapContainer';
 import {Data, useJsApiLoader} from "@react-google-maps/api";
 import Loading from './Loading';
-import {countryList, API_KEY, DEFAULT_URL}  from "../helpers";
+import {countryList, DEFAULT_URL}  from "../helpers";
 import axios from 'axios';
 
 
@@ -12,7 +12,7 @@ const ConfPage = ({confData, get, setGet}) => {
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: API_KEY
+        googleMapsApiKey: process.env.API_KEY
     });
 
     const [editData, setEditData] = useState(confData);
